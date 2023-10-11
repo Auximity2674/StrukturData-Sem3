@@ -3,7 +3,6 @@
 
 using namespace std;
 
-// Struktur data untuk menyimpan informasi mahasiswa
 struct Mahasiswa {
     string nama;
     string nrp;
@@ -11,7 +10,7 @@ struct Mahasiswa {
     string jenisKelamin;
 };
 
-// Fungsi untuk menampilkan data mahasiswa
+// Untuk menampilkan data mahasiswa
 void tampilkanData(const Mahasiswa mahasiswas[], int jumlahData) {
     cout << "Data Mahasiswa:" << endl;
     for (int i = 0; i < jumlahData; ++i) {
@@ -25,9 +24,9 @@ void tampilkanData(const Mahasiswa mahasiswas[], int jumlahData) {
 }
 
 int main() {
-    const int maksimalMahasiswa = 10; // Jumlah maksimum mahasiswa yang dapat disimpan
-    Mahasiswa mahasiswas[maksimalMahasiswa]; // Array untuk menyimpan data mahasiswa
-    int jumlahData = 0; // Jumlah data mahasiswa yang sudah disimpan
+    const int maksimalMahasiswa = 10;
+    Mahasiswa mahasiswas[maksimalMahasiswa];
+    int jumlahData = 0;
 
     while (true) {
         cout << "Pilih operasi yang ingin dilakukan:" << endl;
@@ -54,7 +53,7 @@ int main() {
                     cout << "Masukkan NRP Mahasiswa: ";
                     cin >> mahasiswas[jumlahData].nrp;
                     cout << "Masukkan Nama Mahasiswa: ";
-                    cin.ignore(); // Menghapus karakter newline (\n) dari buffer sebelum membaca input
+                    cin.ignore();
                     getline(cin, mahasiswas[jumlahData].nama);
                     cout << "Masukkan Usia Mahasiswa: ";
                     cin >> mahasiswas[jumlahData].usia;
@@ -78,7 +77,6 @@ int main() {
                     bool ditemukan = false;
                     for (int i = 0; i < jumlahData; ++i) {
                         if (mahasiswas[i].nrp == nrpHapus) {
-                            // Menggeser data ke kiri untuk menghapus
                             for (int j = i; j < jumlahData - 1; ++j) {
                                 mahasiswas[j] = mahasiswas[j + 1];
                             }
